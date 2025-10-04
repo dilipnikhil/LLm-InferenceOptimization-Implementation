@@ -15,16 +15,9 @@ import numpy as np
 from collections import defaultdict
 import warnings
 warnings.filterwarnings("ignore")
-
-# Try to import bitsandbytes for INT4 quantization
-try:
-    import bitsandbytes as bnb
-    from transformers import BitsAndBytesConfig
-    BNB_AVAILABLE = True
-    print(f"BitsAndBytes available for INT4 quantization (v{bnb.__version__})")
-except ImportError:
-    BNB_AVAILABLE = False
-    print("BitsAndBytes not available - INT4 quantization will be skipped")
+import bitsandbytes as bnb
+from transformers import BitsAndBytesConfig
+BNB_AVAILABLE = True
 
 class GPT2QuantizationAnalyzer:
     """
