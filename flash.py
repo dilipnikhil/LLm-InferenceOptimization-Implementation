@@ -503,13 +503,5 @@ def main():
             print(f"  Native Implementation:")
             print(f"    Best speedup: {best_native_speedup:.2f}x") 
             print(f"    Average speedup: {avg_native_speedup:.2f}x")
-        print(f"  Memory optimization: Varies by sequence length")
-    
-    print(f"\nKey Achievements:")
-    print(f"  - Implemented block-wise attention computation")
-    print(f"  - Demonstrated GPU memory optimization")
-    print(f"  - KV-cache for autoregressive generation")
-    print(f"  - Comprehensive benchmarking methodology")
-
 if __name__ == "__main__":
     main()
