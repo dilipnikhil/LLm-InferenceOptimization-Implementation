@@ -412,10 +412,8 @@ class ModelPairBenchmark:
                 result['description'] = pair_config['description']
                 all_results.append(result)
         
-        # Final comparison
-        print(f"\n\n" + "="*50)
         print("FINAL COMPARISON")
-        print("="*50)
+
         
         for result in all_results:
             status = "FASTER" if result['avg_speedup'] > 1.0 else "SLOWER"
@@ -429,27 +427,14 @@ class ModelPairBenchmark:
             print(f"   Speedup: {best_result['avg_speedup']:.2f}x")
             print(f"   Acceptance: {best_result['avg_acceptance_rate']:.1%}")
         
-        print(f"\n\nKEY INSIGHTS:")
-        print(f"- Model size ratio critically impacts speculative decoding success")
-        print(f"- High acceptance rates don't guarantee speedup")
-        print(f"- Optimal configuration requires 8-10x parameter ratio")
-        print(f"- Performance variability is inherent to the technique")
-        
         return all_results
 
 
 def main():
     """Run comprehensive speculative decoding analysis"""
-    print("GPT-2 Speculative Decoding Analysis")
-    print("Study of Model Size Ratios")
-    print("=" * 50)
     
     benchmark = ModelPairBenchmark()
     results = benchmark.run_comprehensive_benchmark()
-    
-    print(f"\n\nAnalysis Complete!")
-    print("=" * 50)
-
 
 if __name__ == "__main__":
     main()
